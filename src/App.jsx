@@ -5,11 +5,13 @@ import PlayersList from './components/PlayersList'
 
 function App() {
   return (
-    <>
+    <div className='mt-20'>
       <Header />
-      <Form />
-      <PlayersList />
-    </>
+      <div className="md:flex mt-10">
+        <Form />
+        <PlayersList />
+      </div>
+    </div>
   )
 }
 
