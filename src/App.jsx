@@ -1,8 +1,15 @@
 import './App.css'
+import Form from './components/Form'
+import Header from './components/Header'
+import PlayersList from './components/PlayersList'
 
 function App() {
   return (
-    <h1>Hola Mundo</h1>
+    <>
+      <Header />
+      <Form />
+      <PlayersList />
+    </>
   )
 }
 
