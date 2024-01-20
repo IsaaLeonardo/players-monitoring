@@ -10,7 +10,7 @@ function PlayersList() {
         <span className="text-indigo-600 font-bold">visualiza datos</span>
       </p>
 
-      <div className="px-5">
+      <div className="px-5 md:max-h-[792px] md:overflow-y-scroll">
         <Player />
         <Player />
         <Player />
