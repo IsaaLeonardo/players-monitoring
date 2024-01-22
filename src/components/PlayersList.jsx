@@ -1,6 +1,6 @@
 import Player from "./Player"
 
-function PlayersList({ players }) {
+function PlayersList({ players, setPlayer }) {
   return (
     <div className="md:w-1/2 lg:w-3/5">
       { players.length === 0 ? (
@@ -28,6 +28,7 @@ function PlayersList({ players }) {
             <Player
               key={ player.id }
               player={ player }
+              setPlayer={ setPlayer }
             />
           ))
         }

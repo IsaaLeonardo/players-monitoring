@@ -1,4 +1,4 @@
-function Player({ player }) {
+function Player({ player, setPlayer }) {
   const { name, position, date, oxigenLevels, heartRate, syntoms } = player
 
   return (
@@ -28,14 +28,17 @@ function Player({ player }) {
         <span className="font-normal normal-case"> { heartRate } </span>
       </p>
 
-      <p className="font-bold mb-1 text-gray-700 uppercase">
-        Síntomas: {''}
-        <span className="font-normal normal-case">{ syntoms }</span>
-      </p>
+      { syntoms && (
+        <p className="font-bold mb-1 text-gray-700 uppercase">
+          Síntomas: {''}
+          <span className="font-normal normal-case">{ syntoms }</span>
+        </p>
+      )}
 
       <div className="flex flex-col gap-y-3 md:justify-between md:flex-row	mt-5">
         <button
           className="bg-indigo-600 hover:bg-indigo-800 transition-all p-2 text-white uppercase font-bold rounded-md md:w-32"
+          onClick={ () => setPlayer(player) }
         >
           Editar
         </button>

@@ -6,6 +6,7 @@ import PlayersList from './components/PlayersList'
 
 function App() {
   const [players, setPlayers] = useState([])
+  const [player, setPlayer] = useState({})
 
   return (
     <div className='mt-20'>
@@ -17,6 +18,7 @@ function App() {
         />
         <PlayersList
           players={ players }
+          setPlayer={ setPlayer }
         />
       </div>
     </div>
