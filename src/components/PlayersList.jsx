@@ -1,6 +1,6 @@
 import Player from "./Player"
 
-function PlayersList() {
+function PlayersList({ players }) {
   return (
     <div className="md:w-1/2 lg:w-3/5">
       <h2 className="text-center font-black text-3xl">Listado de Jugadores</h2>
@@ -11,10 +11,11 @@ function PlayersList() {
       </p>
 
       <div className="px-5 md:max-h-[792px] md:overflow-y-scroll">
-        <Player />
-        <Player />
-        <Player />
-        <Player />
+        {
+          players.map(player => (
+            <Player player={ player }/>
+          ))
+        }
       </div>
     </div>
   )

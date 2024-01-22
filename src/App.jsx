@@ -15,7 +15,9 @@ function App() {
           players={ players }
           setPlayers={ setPlayers }
         />
-        <PlayersList />
+        <PlayersList
+          players={ players }
+        />
       </div>
     </div>
   )
