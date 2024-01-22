@@ -13,7 +13,10 @@ function PlayersList({ players }) {
       <div className="px-5 md:max-h-[792px] md:overflow-y-scroll">
         {
           players.map(player => (
-            <Player player={ player }/>
+            <Player
+              key={ player.id }
+              player={ player }
+            />
           ))
         }
       </div>

@@ -1,5 +1,6 @@
 import { useState } from "react"
 import Error from "./Error"
+import createId from "../js/createId"
 
 function Form({ players, setPlayers }) {
   const [name, setName] = useState('')
@@ -23,6 +24,7 @@ function Form({ players, setPlayers }) {
 
     // Create player
     const player = {
+      id: createId(),
       name,
       position,
       date,
