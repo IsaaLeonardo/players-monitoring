@@ -15,6 +15,7 @@ function App() {
         <Form
           players={ players }
           setPlayers={ setPlayers }
+          player={ player }
         />
         <PlayersList
           players={ players }

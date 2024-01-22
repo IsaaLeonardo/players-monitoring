@@ -1,8 +1,8 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Error from "./Error"
 import createId from "../js/createId"
 
-function Form({ players, setPlayers }) {
+function Form({ players, setPlayers, player }) {
   const [name, setName] = useState('')
   const [position, setPosition] = useState('')
   const [date, setDate] = useState('')
@@ -11,6 +11,19 @@ function Form({ players, setPlayers }) {
   const [syntoms, setSyntoms] = useState('')
 
   const [error, setError] = useState(false)
+
+  useEffect(() => {
+    if (Object.keys(player).length === 0) return
+
+    const { name, position, date, oxigenLevels, heartRate, syntoms } = player
+
+    setName(name)
+    setPosition(position)
+    setDate(date)
+    setOxigenLevels(oxigenLevels)
+    setHeartRate(heartRate)
+    setSyntoms(syntoms)
+  }, [player])
 
   const handleSubmit = e => {
     e.preventDefault()
