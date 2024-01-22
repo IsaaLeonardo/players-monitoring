@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-function Form() {
+function Form({ players, setPlayers }) {
   const [name, setName] = useState('')
   const [position, setPosition] = useState('')
   const [date, setDate] = useState('')
@@ -19,6 +19,26 @@ function Form() {
     }
 
     setError(false)
+
+    // Create player
+    const player = {
+      name,
+      position,
+      date,
+      oxigenLevels,
+      heartRate,
+      syntoms
+    }
+
+    setPlayers([...players, player])
+    
+    // Reset form
+    setName('')
+    setPosition('')
+    setDate('')
+    setOxigenLevels('')
+    setHeartRate('')
+    setSyntoms('')
   }
 
   return (
