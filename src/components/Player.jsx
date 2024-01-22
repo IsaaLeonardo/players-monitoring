@@ -32,6 +32,20 @@ function Player({ player }) {
         Síntomas: {''}
         <span className="font-normal normal-case">{ syntoms }</span>
       </p>
+
+      <div className="flex flex-col gap-y-3 md:justify-between md:flex-row	mt-5">
+        <button
+          className="bg-indigo-600 hover:bg-indigo-800 transition-all p-2 text-white uppercase font-bold rounded-md md:w-32"
+        >
+          Editar
+        </button>
+
+        <button
+          className="bg-red-500 hover:bg-red-600 transition-all p-2 text-white uppercase font-bold rounded-md md:w-32"
+        >
+          Eliminar
+        </button>
+      </div>
     </div>
   )
 }
