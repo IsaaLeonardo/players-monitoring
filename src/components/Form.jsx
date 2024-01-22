@@ -36,8 +36,8 @@ function Form({ players, setPlayers, player }) {
     setError(false)
 
     // Set player data
-    const player = {
-      id: createId(),
+    const playerData = {
+      id: player.id || createId(),
       name,
       position,
       date,
@@ -49,10 +49,10 @@ function Form({ players, setPlayers, player }) {
     // Create or edit players
     if (player.id) {
       const index = players.findIndex(p => p.id === player.id)
-      players[index] = player
+      players[index] = playerData
       setPlayers([...players])
     } else {
-      setPlayers([...players, player])
+      setPlayers([...players, playerData])
     }
     
     // Reset form
