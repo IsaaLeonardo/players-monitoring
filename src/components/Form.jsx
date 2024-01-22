@@ -8,6 +8,16 @@ function Form() {
   const [heartRate, setHeartRate] = useState('')
   const [syntoms, setSyntoms] = useState('')
 
+  const handleSubmit = e => {
+    e.preventDefault()
+    
+    if ( [name, position, date, oxigenLevels, heartRate].includes('') ) {
+      console.log('Todos los campos son obligatorios')
+    } else {
+      console.log('Datos enviados')
+    }
+  }
+
   return (
     <div className="md:w-1/2 lg:w-2/5">
       <h2 className="font-black text-3xl text-center">Formulario</h2>
@@ -17,7 +27,10 @@ function Form() {
         <span className="text-indigo-600 font-bold">registra datos</span>
       </p>
 
-      <form className="bg-white py-10 px-5 shado-md rounded-lg mb-10">
+      <form
+        className="bg-white py-10 px-5 shado-md rounded-lg mb-10"
+        onSubmit={ handleSubmit }
+      >
         <div className="mb-8">
           <label htmlFor="name" className="block text-gray-700 uppercase font-bold mb-2">
             Nombre
