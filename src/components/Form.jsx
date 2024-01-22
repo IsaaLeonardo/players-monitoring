@@ -1,4 +1,13 @@
+import { useState } from "react"
+
 function Form() {
+  const [name, setName] = useState('')
+  const [position, setPosition] = useState('')
+  const [date, setDate] = useState('')
+  const [oxigenLevels, setOxigenLevels] = useState('')
+  const [heartRate, setHeartRate] = useState('')
+  const [syntoms, setSyntoms] = useState('')
+
   return (
     <div className="md:w-1/2 lg:w-2/5">
       <h2 className="font-black text-3xl text-center">Formulario</h2>
@@ -19,6 +28,8 @@ function Form() {
             id="name"
             placeholder="Nombre del Jugador"
             className="w-full border-2 p-2 placeholder-gray-400 rounded-md"
+            value={ name }
+            onChange={ e => setName(e.target.value)}
           />
         </div>
 
@@ -26,7 +37,11 @@ function Form() {
           <label htmlFor="nombre" className="block text-gray-700 uppercase font-bold mb-2">
             Posición
           </label>
-          <select className="w-full border-2 p-2 rounded-md bg-white">
+          <select
+            className="w-full border-2 p-2 rounded-md bg-white"
+            value={ position }
+            onChange={ e => setPosition(e.target.value)}
+          >
             <option value="">--Selecciona la posición--</option>
             <option value="p">Pitcher</option>
             <option value="c">Catcher</option>
@@ -50,6 +65,8 @@ function Form() {
             id="date"
             placeholder="Nombre del Jugador"
             className="w-full border-2 p-2 placeholder-gray-400 rounded-md"
+            value={ date }
+            onChange={ e => setDate(e.target.value)}
           />
         </div>
 
@@ -63,6 +80,8 @@ function Form() {
             id="oxigenLevels"
             placeholder="90,00 %"
             className="w-full border-2 p-2 placeholder-gray-400 rounded-md"
+            value={ oxigenLevels }
+            onChange={ e => setOxigenLevels(e.target.value)}
           />
         </div>
 
@@ -76,6 +95,8 @@ function Form() {
             id="heartRate"
             placeholder="200 lpm"
             className="w-full border-2 p-2 placeholder-gray-400 rounded-md"
+            value={ heartRate }
+            onChange={ e => setHeartRate(e.target.value)}
           />
         </div>
         <div className="mb-8">
@@ -88,6 +109,8 @@ function Form() {
             id="syntoms"
             placeholder="Cansancio, dolor, lesiones"
             className="w-full border-2 p-2 placeholder-gray-400 rounded-md"
+            value={ syntoms }
+            onChange={ e => setSyntoms(e.target.value)}
           />
         </div>
 
