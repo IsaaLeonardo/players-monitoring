@@ -8,6 +8,11 @@ function App() {
   const [players, setPlayers] = useState([])
   const [player, setPlayer] = useState({})
 
+  const handleDelete = id => {
+    const newPlayers = players.filter(player => player.id !== id)
+    setPlayers(newPlayers)
+  }
+
   return (
     <div className='mt-20'>
       <Header />
@@ -20,6 +25,7 @@ function App() {
         <PlayersList
           players={ players }
           setPlayer={ setPlayer }
+          handleDelete={ handleDelete }
         />
       </div>
     </div>

@@ -1,5 +1,5 @@
-function Player({ player, setPlayer }) {
-  const { name, position, date, oxigenLevels, heartRate, syntoms } = player
+function Player({ player, setPlayer, handleDelete }) {
+  const { id, name, position, date, oxigenLevels, heartRate, syntoms } = player
 
   return (
     <div className="bg-white py-10 px-5 shadow-md rounded-xl mb-3">
@@ -45,6 +45,7 @@ function Player({ player, setPlayer }) {
 
         <button
           className="bg-red-500 hover:bg-red-600 transition-all p-2 text-white uppercase font-bold rounded-md md:w-32"
+          onClick={ () => handleDelete(id) }
         >
           Eliminar
         </button>
