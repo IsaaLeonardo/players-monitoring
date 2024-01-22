@@ -1,4 +1,5 @@
 import { useState } from "react"
+import Error from "./Error"
 
 function Form({ players, setPlayers }) {
   const [name, setName] = useState('')
@@ -54,11 +55,10 @@ function Form({ players, setPlayers }) {
         className="bg-white py-10 px-5 shado-md rounded-lg mb-10"
         onSubmit={ handleSubmit }
       >
-        { error && (
-          <p className="bg-red-500 text-white p-3 text-center mb-5 font-bold uppercase rounded-md">
-            Todos los campos son obligatorios <div>(excepto síntomas)</div>
-          </p>
-        ) }
+        { error &&
+          <Error>
+            <p>Todos los campos son obligatorios <div>(excepto síntomas)</div></p>
+          </Error>}
         <div className="mb-8">
           <label htmlFor="name" className="block text-gray-700 uppercase font-bold mb-2">
             Nombre
