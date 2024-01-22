@@ -35,7 +35,7 @@ function Form({ players, setPlayers, player }) {
 
     setError(false)
 
-    // Create player
+    // Set player data
     const player = {
       id: createId(),
       name,
@@ -46,7 +46,14 @@ function Form({ players, setPlayers, player }) {
       syntoms
     }
 
-    setPlayers([...players, player])
+    // Create or edit players
+    if (player.id) {
+      const index = players.findIndex(p => p.id === player.id)
+      players[index] = player
+      setPlayers([...players])
+    } else {
+      setPlayers([...players, player])
+    }
     
     // Reset form
     setName('')
@@ -172,7 +179,7 @@ function Form({ players, setPlayers, player }) {
 
         <input
           type="submit"
-          value="Agregar datos"
+          value={ Object.keys(player).length === 0 ? "Agregar datos" : "Editar datos" }
           className="bg-indigo-600 w-full text-center p-3 text-white uppercase font-bold hover:bg-indigo-800 cursor-pointer transition-all"
         />
       </form>
