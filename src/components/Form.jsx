@@ -8,14 +8,17 @@ function Form() {
   const [heartRate, setHeartRate] = useState('')
   const [syntoms, setSyntoms] = useState('')
 
+  const [error, setError] = useState(false)
+
   const handleSubmit = e => {
     e.preventDefault()
     
     if ( [name, position, date, oxigenLevels, heartRate].includes('') ) {
-      console.log('Todos los campos son obligatorios')
-    } else {
-      console.log('Datos enviados')
+      setError(true)
+      return
     }
+
+    setError(false)
   }
 
   return (
@@ -31,6 +34,11 @@ function Form() {
         className="bg-white py-10 px-5 shado-md rounded-lg mb-10"
         onSubmit={ handleSubmit }
       >
+        { error && (
+          <p className="bg-red-500 text-white p-3 text-center mb-5 font-bold uppercase rounded-md">
+            Todos los campos son obligatorios <div>(excepto síntomas)</div>
+          </p>
+        ) }
         <div className="mb-8">
           <label htmlFor="name" className="block text-gray-700 uppercase font-bold mb-2">
             Nombre
