@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import Error from "./Error"
 import createId from "../js/createId"
 
-function Form({ players, setPlayers, player }) {
+function Form({ players, setPlayers, player, setPlayer }) {
   const [name, setName] = useState('')
   const [position, setPosition] = useState('')
   const [date, setDate] = useState('')
@@ -51,6 +51,7 @@ function Form({ players, setPlayers, player }) {
       const index = players.findIndex(p => p.id === player.id)
       players[index] = playerData
       setPlayers([...players])
+      setPlayer({})
     } else {
       setPlayers([...players, playerData])
     }
